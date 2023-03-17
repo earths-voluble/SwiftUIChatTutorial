@@ -10,21 +10,24 @@ import SwiftUI
 struct ConversationsView: View {
     @State private var showNewMessageView = false
     @State private var showChatView = false
+    @State var selectedUser: User?
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
-            NavigationLink(
-                destination: ChatView(),
-                isActive: $showChatView,
-                label: { })
+            if let user = selectedUser {
+                NavigationLink(
+                    destination: ChatView(user: user),
+                    isActive: $showChatView,
+                    label: { })
+            }
             
             // 대화목록
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach((0 ... 10), id: \.self) { _ in
                         NavigationLink(
-                            destination: ChatView(),
+                            destination: ChatView(user: MOCK_USER),
                             label: { ConversationCell() }
                         )
                     }
@@ -45,8 +48,8 @@ struct ConversationsView: View {
             .foregroundColor(.white)
             .clipShape(Circle())
             .padding()
-            .sheet(isPresented: $showNewMessageView,
-                   content: { NewMessageView(showChatView: $showChatView)
+            .sheet(isPresented: $showNewMessageView, content: {
+                NewMessageView(showChatView: $showChatView, user: $selectedUser)
             })
         }
     }

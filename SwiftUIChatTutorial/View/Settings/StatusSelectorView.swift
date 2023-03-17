@@ -29,7 +29,6 @@ struct StatusSelectorView: View {
                     
                     // for loop with options
                     
-                    
                     ForEach(UserStatus.allCases.filter({ $0 != .notConfigured}),
                             id: \.self) { status in
                         Button(action: {
@@ -37,7 +36,6 @@ struct StatusSelectorView: View {
                         }, label: {
                             StatusCell(status: status)
                         })
-                        
                     }
                 }
             }

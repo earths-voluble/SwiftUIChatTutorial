@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SettingsView: View {
+    private let user: User
+        
+    init(user: User) {
+        self.user = user
+    }
+    
     var body: some View {
         ZStack {
             Color(.systemGroupedBackground)
@@ -16,7 +22,7 @@ struct SettingsView: View {
             VStack(spacing: 32) {
                 NavigationLink(
                     destination: EditProfileView(),
-                    label: { SettingsHeaderView() }
+                    label: { SettingsHeaderView(user: user) }
                 )
                 
                 VStack(spacing: 1) {
@@ -26,7 +32,7 @@ struct SettingsView: View {
                 }
                 
                 Button(action: {
-                    print("로그아웃 버튼")
+                    AuthViewModel.shared.signount()
                 }, label: {
                     Text("로그아웃")
                         .foregroundColor(.red)
@@ -42,8 +48,4 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+

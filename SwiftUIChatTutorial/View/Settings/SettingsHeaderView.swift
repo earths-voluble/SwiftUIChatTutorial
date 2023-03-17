@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SettingsHeaderView: View {
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
+    
     var body: some View {
         HStack {
-            Image("myProfileImage")
+            KFImage(URL(string: user.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 64, height: 64)
@@ -18,7 +25,7 @@ struct SettingsHeaderView: View {
                 .padding(.leading)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Bohan")
+                Text(user.fullname)
                     .font(.system(size: 18))
                     .foregroundColor(.black)
                     .fontWeight(.semibold)

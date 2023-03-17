@@ -13,18 +13,25 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var username = ""
     @Environment(\.presentationMode) var mode
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
+            
+            NavigationLink(
+                destination: ProfilePhotoSelectorView(),
+                isActive: $viewModel.didAuthenticateUser,
+                label: { })
+            
             VStack(alignment: .leading, spacing: 10) {
                 HStack { Spacer() }
                 
-                Text("Get Started.")
+                Text("계정을 만들어서")
                     .font(.largeTitle)
                     .bold()
 //                        .shadow(color: .gray, radius: 10, x: 0.0, y: 10)
                 
-                Text("Create your account.")
+                Text("소통을 시작하세요.")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.blue)
@@ -33,30 +40,42 @@ struct RegistrationView: View {
                 
                 VStack(spacing: 40) {
                     CustomTextField(imageName: "envelope",
-                                    placeholderText: "Email",
+                                    placeholderText: "이메일",
                                     isSecureField: false,
                                     text: $email)
-                    CustomTextField(imageName: "person",
-                                    placeholderText: "Username",
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                    CustomTextField(imageName: "lock",
+                                    placeholderText: "비밀번호",
                                     isSecureField: true,
-                                    text: $username)
+                                    text: $password)
+
                     CustomTextField(imageName: "person",
-                                    placeholderText: "Full Name",
+                                    placeholderText: "이름",
                                     isSecureField: false,
                                     text: $fullname)
-                    CustomTextField(imageName: "lock",
-                                    placeholderText: "Password",
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                    CustomTextField(imageName: "person",
+                                    placeholderText: "닉네임",
                                     isSecureField: false,
-                                    text: $email)
+                                    text: $username)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+
                 }
                 .padding([.top, .horizontal], 32)
             }
             .padding(.leading)
             
             Button(action: {
-                print("Handle sign up")
+                viewModel.register(withEmail: email,
+                                   password: password,
+                                   fullname: fullname,
+                                   username: username)
             }, label: {
-                Text("Sign Up")
+                Text("가입하기")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
@@ -71,9 +90,9 @@ struct RegistrationView: View {
             
             Button(action: { mode.wrappedValue.dismiss() }, label: {
                 HStack {
-                    Text("Already have an account?")
+                    Text("이미 계정이 있으신가요?")
                         .font(.system(size: 14))
-                    Text("Sign In")
+                    Text("로그인하세요.")
                         .font(.system(size: 14, weight: .semibold))
                 }
             })
