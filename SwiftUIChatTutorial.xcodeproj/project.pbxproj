@@ -44,6 +44,8 @@
 		89B9D5F929BDDD2D00441D99 /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D5F829BDDD2D00441D99 /* NewMessageViewModel.swift */; };
 		89B9D5FB29BDDDBF00441D99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D5FA29BDDDBF00441D99 /* Constants.swift */; };
 		89B9D60129C4431D00441D99 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D60029C4431D00441D99 /* MessageViewModel.swift */; };
+		89B9D60329C459D500441D99 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D60229C459D500441D99 /* ConversationsViewModel.swift */; };
+		89B9D60729C4616000441D99 /* ConversationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D60629C4616000441D99 /* ConversationCellViewModel.swift */; };
 		89E562E329A0B3D600F3F967 /* SwiftUIChatTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E562E229A0B3D600F3F967 /* SwiftUIChatTutorialApp.swift */; };
 		89E562E529A0B3D600F3F967 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E562E429A0B3D600F3F967 /* ContentView.swift */; };
 		89E562E729A0B3D700F3F967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E562E629A0B3D700F3F967 /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 		89B9D5F829BDDD2D00441D99 /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
 		89B9D5FA29BDDDBF00441D99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89B9D60029C4431D00441D99 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		89B9D60229C459D500441D99 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
+		89B9D60629C4616000441D99 /* ConversationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellViewModel.swift; sourceTree = "<group>"; };
 		89E562DF29A0B3D600F3F967 /* SwiftUIChatTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIChatTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E562E229A0B3D600F3F967 /* SwiftUIChatTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIChatTutorialApp.swift; sourceTree = "<group>"; };
 		89E562E429A0B3D600F3F967 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				8985506629B72D5100FC45E9 /* AuthViewModel.swift */,
 				89B9D5F829BDDD2D00441D99 /* NewMessageViewModel.swift */,
 				89B9D60029C4431D00441D99 /* MessageViewModel.swift */,
+				89B9D60229C459D500441D99 /* ConversationsViewModel.swift */,
+				89B9D60629C4616000441D99 /* ConversationCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				89177D5F29B0EDE200AB5C68 /* SettingsCell.swift in Sources */,
 				89177D5629B0B89200AB5C68 /* ChatView.swift in Sources */,
 				89B9D5F929BDDD2D00441D99 /* NewMessageViewModel.swift in Sources */,
+				89B9D60329C459D500441D99 /* ConversationsViewModel.swift in Sources */,
 				8926B39C29B5FC2C00FEC337 /* MessageView.swift in Sources */,
 				89177D5B29B0ED0F00AB5C68 /* SettingsHeaderView.swift in Sources */,
 				89177D5929B0B90E00AB5C68 /* ConversationsView.swift in Sources */,
@@ -377,6 +384,7 @@
 				8926B39E29B60F7000FEC337 /* CustomInputView.swift in Sources */,
 				89B9D60129C4431D00441D99 /* MessageViewModel.swift in Sources */,
 				89E562E529A0B3D600F3F967 /* ContentView.swift in Sources */,
+				89B9D60729C4616000441D99 /* ConversationCellViewModel.swift in Sources */,
 				89E562E329A0B3D600F3F967 /* SwiftUIChatTutorialApp.swift in Sources */,
 				8926B38E29B305D200FEC337 /* ConversationCell.swift in Sources */,
 				8985506729B72D5100FC45E9 /* AuthViewModel.swift in Sources */,
